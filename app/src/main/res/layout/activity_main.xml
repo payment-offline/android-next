@@ -11,12 +11,19 @@
     tools:context="offlinepayment.hackathon.offpay.MainActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Balance" />
+
+    <TextView
         android:id="@+id/txtBalance"
         android:layout_width="match_parent"
         android:layout_height="240dip"
         android:textSize="50sp"
         android:gravity="center"
-        android:text="Balance: ￥0.00" />
+        android:text="￥0.00" />
 
     <LinearLayout
         android:orientation="horizontal"

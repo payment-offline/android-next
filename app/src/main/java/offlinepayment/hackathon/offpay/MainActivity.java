@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements SinVoicePlayer.Li
 
     public void updateBalance(){
         balance = preferences.getInt("Money", 0);
-        txtBalance.setText(String.format(Locale.ENGLISH, "Balance: ￥%d.%d", balance/100, balance%100));
+        txtBalance.setText(String.format(Locale.ENGLISH, "￥%d.%d", balance/100, balance%100));
     }
 
     @Override
@@ -235,6 +235,15 @@ public class MainActivity extends AppCompatActivity implements SinVoicePlayer.Li
         Log.d("Play", "Play ended");
         if (words_to_send.equals("WTP")){
             sinVoiceRecognition.start(TOKEN_LEN, false);
+        }
+
+        if (words_to_send.equals("OKC")){
+            new AlertDialog.Builder(MainActivity.this)
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setTitle("Success")
+                    .setMessage("Pay Successfully")
+                    .setPositiveButton("OK", null)
+                    .show();
         }
 
     }
